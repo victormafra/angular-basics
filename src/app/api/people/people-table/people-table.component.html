@@ -1,14 +1,12 @@
-<div *ngIf="dataSource.length === 0">
-  <p>Carregando</p>
-</div>
 
-<table *ngIf="dataSource.length !== 0">
+{{tituloDaTabela}}
+<table>
   <tr>
     <th>Nome</th>
     <th>Altura</th>
   </tr>
-  <tr *ngFor="let pessoa of dataSource">
+  <tr *ngFor="let pessoa of dataSource | people:filtro">
     <td>{{pessoa.name}}</td>
-    <td>{{pessoa.height}}</td>
+    <td>{{pessoa.height | height}}</td>
   </tr>
 </table>

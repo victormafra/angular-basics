@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PeopleTableComponent } from './people-table/people-table.component';
 import { PeopleFilterComponent } from './people-filter/people-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -10,7 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [PeopleTableComponent, PeopleFilterComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [PeopleTableComponent, PeopleFilterComponent]
 })

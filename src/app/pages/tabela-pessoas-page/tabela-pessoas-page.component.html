@@ -1,2 +1,4 @@
-<app-people-filter></app-people-filter>
-<app-people-table></app-people-table>
+<br>
+<app-people-filter (filtroEmitter)="table.atribuiFiltro($event)"></app-people-filter>
+<br>
+<app-people-table #table [tituloDaTabela]="titulo"></app-people-table>

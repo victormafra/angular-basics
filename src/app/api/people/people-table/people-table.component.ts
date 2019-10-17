@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pessoa } from '../../interfaces/pessoa.interface';
 import { PeopleServiceService } from '../../people-service.service';
 
@@ -8,7 +8,14 @@ import { PeopleServiceService } from '../../people-service.service';
   styleUrls: ['./people-table.component.scss']
 })
 export class PeopleTableComponent implements OnInit {
+  @Input() tituloDaTabela = 'Tabela';
+
   dataSource: Array<Pessoa> = [];
+  filtro: string;
+
+  //
+  dataSourceFiltrada: Array<Pessoa> = [];
+  //
   constructor(
     protected $pessoaService: PeopleServiceService
   ) { }
@@ -18,11 +25,10 @@ export class PeopleTableComponent implements OnInit {
   }
 
   inicializaPessoas(): void {
-    // this.$pessoaService.getPessoas().subscribe((resp: {results: Array<Pessoa>}) => {
-    //   console.log(resp);
-    //   this.dataSource = resp.results;
-    // });
     this.dataSource = this.$pessoaService.getPessoas();
   }
 
+  atribuiFiltro(valorDoFiltro: string) {
+    this.filtro = valorDoFiltro;
+  }
 }

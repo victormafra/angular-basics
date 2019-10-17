@@ -1,0 +1,9 @@
+<div *ngIf="mensagemDeErro">
+  <p>{{mensagemDeErro}}</p>
+</div>
+
+<form [formGroup]="loginForm" (submit)="onLogin()">
+  <input formControlName="user" placeholder="Usuário" type="text">
+  <input formControlName="password" placeholder="Senha" type="password">
+  <button type="submit">Logar</button>
+</form>
