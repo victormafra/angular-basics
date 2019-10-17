@@ -1,0 +1,14 @@
+<div *ngIf="dataSource.length === 0">
+  <p>Carregando</p>
+</div>
+
+<table *ngIf="dataSource.length !== 0">
+  <tr>
+    <th>Nome</th>
+    <th>Altura</th>
+  </tr>
+  <tr *ngFor="let pessoa of dataSource">
+    <td>{{pessoa.name}}</td>
+    <td>{{pessoa.height}}</td>
+  </tr>
+</table>
