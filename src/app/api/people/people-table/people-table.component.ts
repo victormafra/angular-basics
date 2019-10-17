@@ -18,10 +18,11 @@ export class PeopleTableComponent implements OnInit {
   }
 
   inicializaPessoas(): void {
-    this.$pessoaService.getPessoas().subscribe((resp: {results: Array<Pessoa>}) => {
-      console.log(resp);
-      this.dataSource = resp.results;
-    });
+    // this.$pessoaService.getPessoas().subscribe((resp: {results: Array<Pessoa>}) => {
+    //   console.log(resp);
+    //   this.dataSource = resp.results;
+    // });
+    this.dataSource = this.$pessoaService.getPessoas();
   }
 
 }

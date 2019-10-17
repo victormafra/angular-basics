@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PeopleTableComponent } from './people-table/people-table.component';
-import { HttpClientModule } from '@angular/common/http';
+import { PeopleFilterComponent } from './people-filter/people-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [PeopleTableComponent],
+  declarations: [PeopleTableComponent, PeopleFilterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
-  exports: [PeopleTableComponent]
+  exports: [PeopleTableComponent, PeopleFilterComponent]
 })
 export class PeopleModule { }
