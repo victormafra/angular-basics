@@ -1,4 +1,6 @@
 <br>
 <app-people-filter (filtroEmitter)="table.atribuiFiltro($event)"></app-people-filter>
 <br>
+<button type="button" (click)="navigateToEdition()">Gerenciar pessoas da tabela</button>
+<br>
 <app-people-table #table [tituloDaTabela]="titulo"></app-people-table>

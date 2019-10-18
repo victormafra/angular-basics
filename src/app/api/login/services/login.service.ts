@@ -11,6 +11,6 @@ export class LoginService {
     if (dados.user === 'aaa') {
       return undefined;
     }
-    return {nome: 'Alberto'};
+    return {nome: 'Alberto', id: 1234};
   }
 }

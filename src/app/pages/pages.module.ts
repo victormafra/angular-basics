@@ -6,10 +6,11 @@ import { TabelaPessoasPageComponent } from './tabela-pessoas-page/tabela-pessoas
 import { PeopleModule } from '../api/people/people.module';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginModule } from '../api/login/login.module';
+import { EditarPessoaPageComponent } from './editar-pessoa-page/editar-pessoa-page.component';
 
 
 @NgModule({
-  declarations: [TabelaPessoasPageComponent, LoginPageComponent],
+  declarations: [TabelaPessoasPageComponent, LoginPageComponent, EditarPessoaPageComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

@@ -1,0 +1,14 @@
+<form [formGroup]="peopleForm" (submit)="onSubmit()">
+  <br>
+  <select formControlName="id">
+    <option value=""></option>
+    <option *ngFor="let id of idsPessoas" [value]="id">{{id}}</option>
+  </select>
+  <br>
+  <input formControlName="name" placeholder="Insira o nome" type="text">
+  <br>
+  <input formControlName="height" placeholder="Insira a altura" type="number">
+
+  <button type="button" (click)="limparFormulario()">Limpar formulário</button>
+  <button type="submit">Salvar</button>
+</form>

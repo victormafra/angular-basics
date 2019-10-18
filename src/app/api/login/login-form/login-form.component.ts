@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +16,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     protected $formBuilder: FormBuilder,
     protected $loginService: LoginService,
-    protected $router: Router
+    protected $router: Router,
+    protected $localStorageService: LocalStorageService
   ) { }
 
   ngOnInit() {
@@ -38,6 +40,8 @@ export class LoginFormComponent implements OnInit {
       const dadosDoUsuario = this.$loginService.login(valoresDoFormulario);
       if (dadosDoUsuario) {
         // Tudo deu certo
+
+        this.$localStorageService.setId(dadosDoUsuario.id);
         this.$router.navigate(['tabela', dadosDoUsuario.nome]);
         this.limparMensagemDeErro();
       } else {

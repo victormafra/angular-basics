@@ -1,12 +1,14 @@
-
-{{tituloDaTabela}}
 <table>
   <tr>
     <th>Nome</th>
     <th>Altura</th>
   </tr>
-  <tr *ngFor="let pessoa of dataSource | people:filtro">
+  <tr *ngFor="let pessoa of dataSource | people:filtro; let i = index">
     <td>{{pessoa.name}}</td>
     <td>{{pessoa.height | height}}</td>
+    <td><button type="button" (click)="redirectToEdit(pessoa.id)">Editar</button></td>
   </tr>
 </table>
+<button type="button" (click)="toggleOrdenacao()">Mudar Ordenacao</button>
+<button type="button" (click)="diminuiNumeroRegistros()">- Registros</button>
+<button type="button" (click)="aumentaNumeroRegistros()">+ Registros</button>

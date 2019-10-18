@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +13,8 @@ export class TabelaPessoasPageComponent implements OnInit, OnDestroy {
   subscriptions: Array<Subscription> = [];
 
   constructor(
-    protected $activatedRoute: ActivatedRoute
+    protected $activatedRoute: ActivatedRoute,
+    protected $router: Router
   ) { }
 
   ngOnInit() {
@@ -34,4 +35,7 @@ export class TabelaPessoasPageComponent implements OnInit, OnDestroy {
     );
   }
 
+  navigateToEdition(): void {
+    this.$router.navigate(['editar']);
+  }
 }
